@@ -1,0 +1,30 @@
+﻿@*with this we activate intellisense*@
+@model List<CatModel> 
+
+<h1>    
+    @Model.Count cats in the system
+</h1>
+
+@if(Model.Any())
+{
+    <ul>
+        @foreach(var cat in Model)
+        {
+            <li>@cat.Name (@cat.Age years old) by @cat.Owner</li>
+        }
+    </ul>
+}
+else
+{
+    <h2>No cats available.</h2>
+}
+
+@*<form method="post" action="/cats/search">
+    First name: <input type="text" name="FirstName" /> <br />
+    Last name: <input type="text" name="LastName" /> <br />
+    Age: <input type="number" name="Age" /> <br />
+    <input type="submit" />
+
+    <!--<button type="button" onclick="alert('Hello world!')">Click Me!</button> -->
+    <!--<button type="button" onclick="alert('Your first app works pretty well!')">Click Here Too</button> -->
+</form>*@
