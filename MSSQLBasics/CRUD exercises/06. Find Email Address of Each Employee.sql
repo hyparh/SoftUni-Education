@@ -1,0 +1,1 @@
+select concat([FirstName], '.', [LastName], '@softuni.bg') as [FullEmailAdress] from Employees

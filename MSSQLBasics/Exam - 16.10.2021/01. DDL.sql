@@ -1,0 +1,57 @@
+CREATE TABLE Sizes
+(
+	[Id] INT PRIMARY KEY IDENTITY,
+	[Length] INT CHECK([Length] >= 10 AND [Length] <= 25) NOT NULL,
+	[RingRange] DECIMAL(5, 2) CHECK([RingRange] >= 1.5 AND [RingRange] <= 7.5) NOT NULL
+)
+
+CREATE TABLE Tastes
+(
+	[Id] INT PRIMARY KEY IDENTITY,
+	[TasteType] NVARCHAR(20) NOT NULL,
+	[TasteStrength] NVARCHAR(15) NOT NULL,
+	[ImageURL] NVARCHAR(100) NOT NULL
+)
+
+CREATE TABLE Brands
+(
+	[Id] INT PRIMARY KEY IDENTITY,
+	[BrandName] NVARCHAR(20) UNIQUE NOT NULL,
+	[BrandDescription] NVARCHAR(MAX)
+)
+
+CREATE TABLE Cigars
+(
+	[Id] INT PRIMARY KEY IDENTITY,
+	[CigarName] NVARCHAR(80) NOT NULL,
+	[BrandId] INT REFERENCES Brands(Id) NOT NULL,
+	[TastId] INT REFERENCES Tastes(Id) NOT NULL,
+	[SizeId] INT REFERENCES Sizes(Id) NOT NULL,
+	[PriceForSingleCigar] DECIMAL(18, 2) NOT NULL,
+	[ImageURL] NVARCHAR(100) NOT NULL
+)
+
+CREATE TABLE Addresses
+(
+	[Id] INT PRIMARY KEY IDENTITY,
+	[Town] NVARCHAR(30) NOT NULL,
+	[Country] NVARCHAR(30) NOT NULL,
+	[Streat] NVARCHAR(100) NOT NULL,
+	[ZIP] NVARCHAR(20) NOT NULL
+)
+
+CREATE TABLE Clients
+(
+	[Id] INT PRIMARY KEY IDENTITY,
+	[FirstName] NVARCHAR(30) NOT NULL,
+	[LastName] NVARCHAR(30) NOT NULL,
+	[Email] NVARCHAR(50) NOT NULL,
+	[AddressId] INT REFERENCES Addresses(Id) NOT NULL
+)
+
+CREATE TABLE ClientsCigars
+(
+	[ClientId] INT REFERENCES Clients(Id),
+	[CigarId] INT REFERENCES Cigars(Id),
+	PRIMARY KEY(ClientId, CigarId)
+)
