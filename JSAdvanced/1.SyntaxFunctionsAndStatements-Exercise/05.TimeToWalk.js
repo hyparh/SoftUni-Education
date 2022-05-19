@@ -5,6 +5,8 @@ function timeToWalk(steps, stepLength, speed) {
     let timeInSeconds = steps / metersPerSecond;
 
     let timeInMinutes = steps - timeInSeconds;
+
+    //changes
 }
 
 timeToWalk(4000, 0.60, 5);
