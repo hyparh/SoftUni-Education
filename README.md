@@ -1,1 +1,1 @@
-# SoftUni - Full C# track
+Full C# track + JS Advanced
