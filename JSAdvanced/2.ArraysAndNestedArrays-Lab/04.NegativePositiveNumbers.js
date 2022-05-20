@@ -2,10 +2,10 @@ function negativePositiveNumbers(input) {
     let result = [];
 
     for (let index = 0; index < input.length; index++) {
+        
         if (input[index] < 0) {
             result.unshift(input[index]);
-        }
-        else {
+        } else {
             result.push(input[index]);
         }    
     }
