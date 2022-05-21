@@ -1,16 +1,14 @@
-function lastKNumberSequence(n, k) {
+function lastKNumberSequence(strLength, step) {
     let arr = [];
     arr.push(1);
 
-    for (let i = 0; i < n; i++) {
-        if (arr[i] - k <= 0) {
-            continue;
+    for (let i = 0; i < arr.length; i++) {
+        if (i === 0) {
+            arr.push(arr[i]);
+        }              
+        if (condition) {
+            
         }
-        else {
-            for (let j = arr[i]; j < k; j++) {               
-                arr.push();
-            }
-        }        
     }
 }
 
