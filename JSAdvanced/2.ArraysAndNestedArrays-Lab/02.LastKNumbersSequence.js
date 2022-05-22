@@ -2,12 +2,11 @@ function lastKNumberSequence(strLength, step) {
     let arr = [];
     arr.push(1);
 
-    for (let i = 0; i < arr.length; i++) {
-        if (i === 0) {
-            arr.push(arr[i]);
-        }              
-        if (condition) {
-            
+    for (let i = 0; i < strLength; i++) {
+        for (let j = arr[i]; j < step; j++) {
+            if (arr[i - step] > 0) {
+                
+            }
         }
     }
 }
