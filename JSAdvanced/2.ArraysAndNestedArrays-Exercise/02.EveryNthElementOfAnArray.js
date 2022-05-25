@@ -1,7 +1,7 @@
 function everyNthElementOfArray(arr, step) {
     let result = [];
 
-    for (let i = 0; i <= arr.length - 1; i+=step) {
+    for (let i = 0; i <= arr.length - 1; i += step) {
 
         if (i === 0) {
             result.push(arr[i]);
