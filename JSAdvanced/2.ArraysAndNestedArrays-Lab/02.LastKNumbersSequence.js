@@ -1,15 +1,28 @@
-function lastKNumberSequence(strLength, step) {
-    let arr = [];
-    arr.push(1);
+function lastKNumbers(n, k) {
 
-    for (let i = 0; i < strLength; i++) {
-        for (let j = arr[i]; j < step; j++) {
-            if (arr[i - step] > 0) {
-                
-            }
-        }
+    let result = [1];
+
+    for (let i = 1; i < n; i++) {
+
+        result[i] = sumLastK(result, k);
     }
+
+    function sumLastK(array = result, k) {
+
+        k = array.length > k ? k : array.length;
+
+        let sum = 0;
+
+        for (let i = 1; i <= k; i++) {
+
+            sum += array[array.length - i];
+        }
+
+        return sum;
+    }
+
+    return result;
 }
 
-lastKNumberSequence(6, 3);
-lastKNumberSequence(8, 2);
+lastKNumbers(6, 3);
+lastKNumbers(8, 2);
