@@ -6,4 +6,12 @@ function som() {
     let sum = Number(num1) + Number(num2) + Number(num3);
 
     document.getElementById('sum').value = sum;
+
+    
+}
+
+function takingElements() {
+    let pElements = document.getElementsByTagName('div')[0].children;
+
+    document.getElementByTagName('div')[0].children = pElements;
 }
