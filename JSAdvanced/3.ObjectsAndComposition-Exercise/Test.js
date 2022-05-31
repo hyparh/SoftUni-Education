@@ -1,9 +1,5 @@
-function lowestPricesInCities(arr) {
-    let result = [];
-    
-    for (const iterator of arr) {
-        
-    }
+function test(arr) {
+    console.log(arr)
 }
 
-lowestPricesInCities();
+test(['sag', 'crack', 2, 5]);
