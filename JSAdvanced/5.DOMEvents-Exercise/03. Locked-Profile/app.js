@@ -9,9 +9,9 @@ function lockedProfile() {
         if (isActive) {
             let div = profile.querySelector('div');
 
-            if (element.target.textContent == 'Show more') {
+            if (event.target.textContent == 'Show more') {
                 div.style.display = 'block';
-                element.target.textContent = 'Hide it';
+                event.target.textContent = 'Hide it';
             } else {
                 div.style.display = '';
                 event.target.textContent = 'Show more';
