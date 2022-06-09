@@ -1,12 +1,14 @@
 function getArticleGenerator(articles) {
-    let arr = articles;
-    let resultDiv = document.getElementById('content');
+    let div = document.getElementById('content');
 
-    return () => {
-        if(arr.length != 0){
-            let article = document.createElement('article');
-            article.textContent = arr.shift();
-            resultDiv.appendChild(article);
-        }
+    return function() {
+        let article = articles.shift(); // taking the first article
+
+        if (article != undefined) {
+            let element = document.createElement('article'); // creating the new element
+            element.textContent = article;
+
+            div.appendChild(element);
+        }        
     }
 }
