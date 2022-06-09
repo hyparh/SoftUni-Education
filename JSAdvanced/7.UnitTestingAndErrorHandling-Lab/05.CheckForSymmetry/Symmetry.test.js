@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const { isSymmetric } = require('./Symmetry');
 
-describe('Symmetry Checker', () => {
+describe('SymmetryChecker', () => {
     it('works with symmetric numeric array', () => {
         expect(isSymmetric([0, 1, 2, 2, 1, 0])).to.be.true;
     });
