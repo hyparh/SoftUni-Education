@@ -1,6 +1,10 @@
-function add() {
-
+function solve(x) {
+    return function(y) {
+        return x + y;
+    };
 }
+
+// examples
 
 let add5 = solution(5);
 console.log(add5(2));
