@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.CyclesInGraph", "03.CyclesInGraph\03.CyclesInGraph.csproj", "{0CBBC0A1-76BC-4F11-8A0E-A240A4F4A34E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CBBC0A1-76BC-4F11-8A0E-A240A4F4A34E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CBBC0A1-76BC-4F11-8A0E-A240A4F4A34E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CBBC0A1-76BC-4F11-8A0E-A240A4F4A34E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CBBC0A1-76BC-4F11-8A0E-A240A4F4A34E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD84667A-E3B7-42C7-B9D6-8325EEACCAFA}
+	EndGlobalSection
+EndGlobal
