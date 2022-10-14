@@ -5,7 +5,7 @@ namespace ExamPrep2
 {
     public class Program
     {
-        // Here we use knapsack algorithm
+        // Here we use Knapsack algorithm
         static void Main()
         {
             var values = Console.ReadLine()
