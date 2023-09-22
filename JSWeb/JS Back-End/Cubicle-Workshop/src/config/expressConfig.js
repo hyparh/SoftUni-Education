@@ -3,7 +3,7 @@ const path = require('path');
 
 function expressConfig(app) {
     app.use(express.static(path.resolve(__dirname, '../public')));
-    app.use(express.urlencoded({ extended: false })); // body parser - parses data through the request to ordinary object
+    app.use(express.urlencoded({ extended: false })); // body parser - parses data through the request to ordinary object. We can call it with req.body
 };
 
 module.exports = expressConfig;
