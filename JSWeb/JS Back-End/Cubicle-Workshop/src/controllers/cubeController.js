@@ -2,7 +2,6 @@ const router = require("express").Router(); //modular router
 const cubeService = require("../services/cubeService");
 
 router.get("/create", (req, res) => {
-    console.log(cubeService.getAll());
   res.render("create");
 });
 
