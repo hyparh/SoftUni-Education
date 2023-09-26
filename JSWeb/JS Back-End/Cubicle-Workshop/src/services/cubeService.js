@@ -17,7 +17,25 @@ const cubes = [
     }
 ];
 
-exports.getAll = () => cubes.slice(); //creates shallow copy of the array
+//creates shallow copy of the array
+exports.getAll = (search, from, to) => {
+    let result = cubes.slice();
+    
+    if (search) {
+        result = result.filter(cube => cube.name.toLowerCase().includes(search.toLowerCase()));
+    }
+
+    if (from) {
+        result = result.filter(cube => cube.difficultyLevel >= Number(from));
+    }
+
+    if (to) {
+        result = result.filter(cube => cube.difficultyLevel <= Number(to));
+    }
+
+    return result;
+}; 
+
 exports.getOne = (cubeId) => cubes.find(x => x.id === cubeId); //we take one cube on its Id
 
 exports.create = (cubeData) => {
