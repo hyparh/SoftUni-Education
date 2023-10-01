@@ -1,7 +1,7 @@
 const Cube = require('../models/Cube');
 
 //creates shallow copy of the array
-exports.getAll = async (search, from, to) => {
+exports.getAvailable = async (search, from, to) => {
     let result = await Cube.find().lean();
     
     // TODO: Use mongoose to filter in the db
