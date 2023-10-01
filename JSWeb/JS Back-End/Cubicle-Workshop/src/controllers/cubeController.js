@@ -24,7 +24,7 @@ router.post("/create", async (req, res) => {
 
 //this here show perfectly the MVC pattern
 router.get("/:cubeId/details", async (req, res) => {
-  const cube = await cubeService.getOne(req.params.cubeId).lean(); //"lean" says: don't return me a document, return me an object
+  const cube = await cubeService.getOneWithAccessories(req.params.cubeId).lean(); //"lean" says: don't return me a document, return me an object
 
   if (!cube) {
     return res.redirect("/404");

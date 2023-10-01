@@ -20,7 +20,11 @@ exports.getAll = async (search, from, to) => {
     return result;
 };
 
-exports.getOne = (cubeId) => Cube.findById(cubeId); //we take one cube on its Id
+//here we take one cube on its Id
+exports.getOne = (cubeId) => Cube.findById(cubeId);
+
+//here we take one cube on its Id and populate it with its accessories
+exports.getOneWithAccessories = (cubeId) => this.getOne(cubeId).populate('accessories');
 
 exports.create = (cubeData) => {
     const cube = new Cube(cubeData);
