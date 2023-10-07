@@ -32,6 +32,10 @@ exports.create = (cubeData) => {
     return cube.save();
 };
 
+exports.update = (cubeId, cubeData) => Cube.findByIdAndUpdate(cubeId, cubeData);
+
+exports.delete = (cubeId) => Cube.findByIdAndDelete(cubeId);
+
 exports.attachAccessory = (cubeId, accessory) => {
     // First variant (harder)
     return Cube.findByIdAndUpdate(cubeId, { $push: { accessories: accessory } }); // accessory here is the Id of an accessory
