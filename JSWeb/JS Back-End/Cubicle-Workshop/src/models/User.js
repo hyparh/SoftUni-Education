@@ -23,7 +23,7 @@ userSchema.virtual('repeatPassword')
     });
 
 userSchema.pre('save', async function() {
-    const hash = await bcrypt.hash(this.password, 10); //use 10 rounds for generating unique salt every time
+    const hash = await bcrypt.hash(this.password, 10); //use 10 rounds for generate unique salt every time
 
     this.password = hash;
 });
