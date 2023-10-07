@@ -14,6 +14,7 @@ const userSchema = new mongoose.Schema({
     },
 });
 
+//password validation
 userSchema.virtual('repeatPassword')
     .set(function(value) {
         if (value !== this.password) {
@@ -21,8 +22,8 @@ userSchema.virtual('repeatPassword')
         }
     });
 
-userSchema.pre('save', async function(next) {
-    const hash = await bcrypt.hash(this.password, 10); //use 10 rounds and generate unique salt every time
+userSchema.pre('save', async function() {
+    const hash = await bcrypt.hash(this.password, 10); //use 10 rounds for generating unique salt every time
 
     this.password = hash;
 });
