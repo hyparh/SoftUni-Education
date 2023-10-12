@@ -1,5 +1,6 @@
 const express = require("express");
 const handlebars = require("express-handlebars");
+const path = require("path");
 
 const routes = require("./routes");
 
@@ -9,8 +10,9 @@ app.engine('hbs', handlebars.engine({
     extname: 'hbs'
 }));
 app.set('view engine', 'hbs');
+app.set('views', 'src/views');
 
-app.use(express.static("public"));
+app.use(express.static(path.resolve(__dirname, 'static')));
 app.use(express.urlencoded({ extended: false }));
 app.use(routes);
 

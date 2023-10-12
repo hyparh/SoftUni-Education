@@ -3,21 +3,14 @@
 <!-- Starts Head Section -->
 
 <head>
-    <link rel="stylesheet" href="/static/css/styles.css">
-    <link rel="icon" type="image/x-icon" href="/static/images/free-30-instagram-stories-icons23_122570.png">
+    <link rel="stylesheet" href="c/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/images/free-30-instagram-stories-icons23_122570.png">
     <title>Petstagram</title>
 </head>
 
 <!-- Starts Body Section -->
 
 <body>
-    <!--Error Container-->
-
-    <!-- <div>
-        <div class="errorContainer">
-            <p>Error</p>
-        </div>
-    </div> -->
 
     <!-- Starts Header Section with Navigation Bar -->
     <header>
@@ -26,8 +19,9 @@
                 <div class="logo">
                     <!-- Link to Home Page -->
                     <a href="#">
-                        <img width="50px" src="/static/images/free-30-instagram-stories-icons23_122570.png" alt="img1">
+                        <img width="50px" src="/images/free-30-instagram-stories-icons23_122570.png" alt="img1">
                     </a>
+
                     <!-- Link to Home Page -->
                     <a class="home" href="#">
                         <i>Petstagram</i>
@@ -86,21 +80,37 @@
 
     <!-- Starts Main Section -->
     <main>
-        <!--Welcome Page-->
-        <section class="welcome-content">
-            <article class="welcome-content-text">
-                <h1>Place for Your</h1>
-                <h1 class="bold-welcome">Pets photos</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-            </article>
-            <article class="welcome-content-image">
-                <img src="/static/images/header-dog.png" alt="dog">
-            </article>
-        </section>
+        <!-- Start Add Photo Section -->
+        <div class="editPage">
+            <h2>Edit photo</h2>
+            <!-- Start Add Photo Form -->
+            <form action="">
+                <p>
+                    <input type="text" name="" placeholder="Name" value="Sal">
+                </p>
 
+                <p>
+                    <input type="number" name="" placeholder="Age" value="4">
+                </p>
+
+                <p>
+                    <textarea type="text" name="" placeholder="Description">This is my pet!</textarea>
+                </p>
+
+                <p>
+                    <input type="text" name="" placeholder="Location" value="Bansko, Bulgaria">
+                </p>
+
+                <p>
+                    <input type="text" name="" placeholder="Link to image" value="/images/axolotl.jpeg">
+                </p>
+                <!-- Add Photo Button -->
+                <button class="edit-btn" type="submit">Edit Photo</button>
+            </form>
+        </div>
     </main>
 
-    <!-- Starts Footer Section -->
+    <!-- Start Footer Section -->
     <div class="footer">
         <span class="footer-section">
             © 2023 SoftUni Back-End Exam
