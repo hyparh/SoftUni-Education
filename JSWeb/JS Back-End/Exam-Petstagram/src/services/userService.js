@@ -5,7 +5,7 @@ const User = require("../models/User");
 const SECRET = "5cd2ac35-2722-4ea4-a30b-9a0befa782b3";
 
 exports.login = async (username, password) => {
-  const user = await User.findOneByUsername({ username });
+  const user = await User.findOne({ username });
 
   if (!user) {
     throw new Error("Invalid username or password");
@@ -22,7 +22,7 @@ exports.login = async (username, password) => {
     email: user.email,
   };
 
-  const token = await jwt.sign(payload, SECRET, {expiresIn: '2d'});
+  const token = await jwt.sign(payload, SECRET, { expiresIn: "2d" });
 
   return token;
 };
