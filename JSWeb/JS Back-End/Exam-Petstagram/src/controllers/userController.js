@@ -2,6 +2,7 @@ const router = require("express").Router();
 
 const userService = require("../services/userService");
 const { TOKEN_KEY } = require("../config/config");
+const { getErrorMessage } = require("../utils/errorHelpers");
 
 router.get("/login", (req, res) => {
   res.render("users/login");
@@ -10,11 +11,15 @@ router.get("/login", (req, res) => {
 router.post("/login", async (req, res) => {
   const { username, password } = req.body;
 
-  const token = await userService.login(username, password);
+  try {
+    const token = await userService.login(username, password);
 
-  res.cookie(TOKEN_KEY, token);
+    res.cookie(TOKEN_KEY, token);
 
-  res.redirect("/");
+    res.redirect("/");
+  } catch (err) {
+    res.render("users/login", { error: getErrorMessage(err) });
+  }
 });
 
 router.get("/register", (req, res) => {
@@ -24,15 +29,20 @@ router.get("/register", (req, res) => {
 router.post("/register", async (req, res) => {
   const { username, email, password, repeatPassword } = req.body;
 
-  await userService.register({ username, email, password, repeatPassword });
+  try {
+    const token = await userService.register({ username, email, password, repeatPassword });
 
-  res.redirect("/users/login");
+    res.cookie(TOKEN_KEY, token);
+    res.redirect("/");
+  } catch (err) {
+    res.render("users/register", { error: getErrorMessage(err), username, email }); //username and email are optional here (to show on template)
+  }
 });
 
-router.get('/logout', (req, res) => {
-    res.clearCookie(TOKEN_KEY);
+router.get("/logout", (req, res) => {
+  res.clearCookie(TOKEN_KEY);
 
-    res.redirect('/');
+  res.redirect("/");
 });
 
 module.exports = router;
