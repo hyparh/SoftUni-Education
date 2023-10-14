@@ -4,6 +4,4 @@ exports.login = (username, password) => {
 
 };
 
-exports.register = (userData) => {
-
-};
+exports.register = (userData) => User.create(userData);
