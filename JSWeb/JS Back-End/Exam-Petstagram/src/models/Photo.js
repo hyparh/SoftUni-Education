@@ -26,18 +26,19 @@ const photoSchema = new mongoose.Schema({
     type: mongoose.Types.ObjectId,
     ref: "User",
   },
-  comments: [     //nested collection without relations
+  comments: [
     {
-      userId: {
+      user: {      //instead of relation we can just take the username here
         type: mongoose.Types.ObjectId,
-        required: true
+        required: true,
+        ref: 'User'
     },
       message: {
         type: String,
         required: [true, "Comment message is required"],
       },
-    },
-  ],
+    }
+  ]
 });
 
 const Photo = mongoose.model("Photo", photoSchema);
