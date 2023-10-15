@@ -6,7 +6,7 @@ const { getErrorMessage } = require("../utils/errorHelpers");
 router.get('/', async (req, res) => {
     const photos = await photoService.getAll().lean();
 
-    res.render('photos', { photos });
+    res.render('photos', { photos: [] }); //here 'photos' is the folder and it finds index.js inside, because of default behavior of handlebars
 });
 
 router.get("/create", (req, res) => {
