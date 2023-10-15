@@ -24,10 +24,22 @@ const photoSchema = new mongoose.Schema({
   },
   owner: {
     type: mongoose.Types.ObjectId,
-    ref: 'User',
-  }
+    ref: "User",
+  },
+  comments: [     //nested collection without relations
+    {
+      userId: {
+        type: mongoose.Types.ObjectId,
+        required: true
+    },
+      message: {
+        type: String,
+        required: [true, "Comment message is required"],
+      },
+    },
+  ],
 });
 
-const Photo = mongoose.model('Photo', photoSchema);
+const Photo = mongoose.model("Photo", photoSchema);
 
 module.exports = Photo;

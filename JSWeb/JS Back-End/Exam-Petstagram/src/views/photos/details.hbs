@@ -130,10 +130,10 @@
         {{#unless isOwner}}
         <div class="addComments">
           <!-- Start Add Comments Form -->
-          <form method="#" action="#">
+          <form method="POST" action="/photos/{{photo._id}}/comments">
             <textarea
               id="comment-textarea"
-              name=""
+              name="message"
               cols="40"
               rows="10"
               placeholder="Add comment..."
