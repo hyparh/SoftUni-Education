@@ -27,3 +27,7 @@ const photoSchema = new mongoose.Schema({
     ref: 'User',
   }
 });
+
+const Photo = mongoose.model('Photo', photoSchema);
+
+module.exports = Photo;
