@@ -31,7 +31,8 @@
               <span>{{photo.location}}</span>
 
               <!-- IF the viewer is the creator of the photo -->
-              <div class="edit-delete-btns">
+              {{#if isOwner}}
+              <div class="edit-delete-btns">             
 
                 <!-- Edit Pet Photo -->
                 <a href="#">
@@ -51,6 +52,7 @@
                   />
                 </a>
               </div>
+              {{/if}}
 
             </h3>
           </div>
@@ -124,6 +126,8 @@
             </div>
           </div>
         </div>
+        {{#if isAuthenticated}}
+        {{#unless isOwner}}
         <div class="addComments">
           <!-- Start Add Comments Form -->
           <form method="#" action="#">
@@ -138,6 +142,8 @@
             <button type="submit">Post</button>
           </form>
         </div>
+        {{/unless}}
+        {{/if}}
       </div>
     </div>
   </div>
