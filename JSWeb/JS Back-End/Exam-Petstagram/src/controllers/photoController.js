@@ -3,10 +3,10 @@ const router = require("express").Router();
 const photoService = require("../services/photoService");
 const { getErrorMessage } = require("../utils/errorHelpers");
 
-router.get('/', async (req, res) => {
-    const photos = await photoService.getAll().lean();
+router.get("/", async (req, res) => {
+  const photos = await photoService.getAll().lean();
 
-    res.render('photos', { photos: [] }); //here 'photos' is the folder and it finds index.js inside, because of default behavior of handlebars
+  res.render("photos", { photos }); //here 'photos' is the folder and it finds index.js inside, because of default behavior of handlebars
 });
 
 router.get("/create", (req, res) => {
@@ -16,7 +16,7 @@ router.get("/create", (req, res) => {
 router.post("/create", async (req, res) => {
   const photoData = {
     ...req.body,
-    owner: req.user._id
+    owner: req.user._id,
   };
 
   try {
@@ -26,6 +26,13 @@ router.post("/create", async (req, res) => {
   } catch (err) {
     res.render("photos/create", { error: getErrorMessage(err) }); //this is all necessary error handling
   }
+});
+
+router.get("/:photoId/details", async (req, res) => {
+  const photoId = req.params.photoId;
+  const photo = await photoService.getOne(photoId).lean();
+
+  res.render("photos/details", { photo });
 });
 
 module.exports = router;
