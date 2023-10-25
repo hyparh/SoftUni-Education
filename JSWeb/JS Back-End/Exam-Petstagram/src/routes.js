@@ -7,8 +7,8 @@ const photoController = require('./controllers/photoController');
 router.use(homeController);
 router.use('/users', userController);
 router.use('/photos', photoController);
-// router.get('*', (req, res) => {     //this is not required for the exam and may cause problems
-//     res.redirect('/404');
-// });
+router.get('*', (req, res) => {     //this is not required for the exam and may cause problems
+    res.redirect('/404');
+});
 
 module.exports = router;

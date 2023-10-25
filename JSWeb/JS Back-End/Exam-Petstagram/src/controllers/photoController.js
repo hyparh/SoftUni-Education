@@ -66,7 +66,7 @@ router.post("/:photoId/edit", isAuth, async (req, res) => {
   } catch (err) {
     res.render("/photos/edit", { error: "Unable to update photo", ...photoData });
   }
-});
+})
 
 router.post("/:photoId/comments", isAuth, async (req, res) => {
     const photoId = req.params.photoId;

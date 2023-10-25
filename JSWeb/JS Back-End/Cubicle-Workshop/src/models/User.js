@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
   username: {
     type: String,
     required: [true, "Username is required"],
-    minLength: [5, "Password is too short!"],
+    minLength: [2, "Username is too short!"],
     match: [/^[A-Za-z0-9]+$/, "Username must be alphanumeric"], //from the beginning to the end it must contain these symbols
     unique: {
         value: true,
@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
       },
       message: `Invalid password characters!`,
     },
-    minLength: 8,
+    minLength: 3,
   },
 });
 
