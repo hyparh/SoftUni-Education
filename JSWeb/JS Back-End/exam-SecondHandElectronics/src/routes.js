@@ -7,7 +7,7 @@ const electronicsController = require('./controllers/electronicsController');
 router.use(homeController);
 router.use('/users', userController);
 router.use('/electronics', electronicsController);
-router.get('*', (req, res) => {
+router.get('*', (req, res) => { //this is good to be commented out during development of functionality
     res.redirect('/404');
 });
 
